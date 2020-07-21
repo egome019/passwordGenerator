@@ -4,4 +4,14 @@ Created an application that generates a password between 8 and 128 characters. W
 
 Here is a link to the application: https://egome019.github.io/passwordGenerator/
 
+Screenshot of the first prompt that determines password length
+![](images/passwordlength.png)
 
+Then screenshots of each character set that the user wants
+![](images/specialcharacter.png)
+![](images/numbercharacters.png)
+![](images/lowercase.png)
+![](images/uppercase.png)
+
+Then the screenshot below is the final product
+![](images/finalproduct.png)
