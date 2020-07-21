@@ -21,6 +21,10 @@ function generatePassword() {
 
   // these are the prompts for the user //
   var passwordLength = prompt("Please choose a password length between 8 and 128 characters.");
+    if (passwordLength < 8 || passwordLength > 128) {
+      alert("Must choose between 8-128 characters.")
+      passwordLength.preventDefault()
+    }
   
   var characters = [
     {spChar: confirm("Do you want to include special characters?")},
@@ -28,6 +32,7 @@ function generatePassword() {
     {lowChar: confirm("Do you want to include lowercase characters?")},
     {upChar: confirm("Do you want to include uppercase characters?")},
   ] 
+  console.log(characters)
   // this is the array of password characters //
   for (var i = 0; i < passwordLength; i++) {
     var charSet = [];
@@ -35,21 +40,19 @@ function generatePassword() {
     if ((characters.spChar = true)) {
       var symbols = spec[Math.floor(Math.random() * spec.length)];
       charSet.push(symbols);
-    }
+    } 
     if ((characters.numChar = true)) {
       var numbers = num[Math.floor(Math.random() * num.length)];
       charSet.push(numbers);
-    }
+    } 
     if ((characters.lowChar = true)) {
       var lowerCase = alpha[Math.floor(Math.random() * alpha.length)];
       charSet.push(lowerCase);
-    }
+    } 
     if ((characters.upChar = true)) {
       var upperCase = caps[Math.floor(Math.random() * caps.length)];
       charSet.push(upperCase);
-    }
-
-    console.log(charSet)
+    } 
     
     var char = charSet[Math.floor(Math.random() * charSet.length)];
 
