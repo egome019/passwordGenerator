@@ -26,45 +26,50 @@ function generatePassword() {
       passwordLength.preventDefault()
     }
   
-  var characters = [
-    {spChar: confirm("Do you want to include special characters?")},
-    {numChar: confirm("Do you want to include numeric characters?")},
-    {lowChar: confirm("Do you want to include lowercase characters?")},
-    {upChar: confirm("Do you want to include uppercase characters?")},
-  ] 
-  console.log(characters)
+  
+    spChar = confirm("Do you want to include special characters?")
+    numChar = confirm("Do you want to include numeric characters?")
+    lowChar = confirm("Do you want to include lowercase characters?")
+    upChar = confirm("Do you want to include uppercase characters?")
+  
+  // var characters = [spChar, numChar, lowChar, upChar]
+  //   console.log(characters)
+ 
+  
   // this is the array of password characters //
   for (var i = 0; i < passwordLength; i++) {
     var charSet = [];
     
-    if ((characters.spChar = true)) {
+    if (spChar == true) {
       var symbols = spec[Math.floor(Math.random() * spec.length)];
       charSet.push(symbols);
-    } 
-    if ((characters.numChar = true)) {
+    } console.log(symbols)
+    if (numChar == true) {
       var numbers = num[Math.floor(Math.random() * num.length)];
       charSet.push(numbers);
-    } 
-    if ((characters.lowChar = true)) {
+    } console.log(numbers)
+    if (lowChar == true) {
       var lowerCase = alpha[Math.floor(Math.random() * alpha.length)];
       charSet.push(lowerCase);
-    } 
-    if ((characters.upChar = true)) {
+    } console.log(lowerCase)
+    if (upChar == true) {
       var upperCase = caps[Math.floor(Math.random() * caps.length)];
       charSet.push(upperCase);
-    } 
-    
+    } console.log(upperCase)
+    console.log(charSet)
     var char = charSet[Math.floor(Math.random() * charSet.length)];
-
+    console.log(char)
     pw += char;
 
   }
 
   return pw;
 
+  
+}
  
 
-}
+
 
 
 // Add event listener to generate button
